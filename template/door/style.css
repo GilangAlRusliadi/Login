@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    perspective: 1200px; /* Untuk efek 3D */
+}
+
+.container {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 1s;
+}
+
+.form-container {
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-container {
+    background-color: #2575fc; /* Warna Biru untuk Login */
+}
+
+.signup-container {
+    background-color: #28a745; /* Warna Hijau untuk Signup */
+    transform: rotateY(180deg); /* Membalik form signup */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    background: #444;
+    box-shadow: 0 0 5px #2575fc;
+}
+
+.btn {
+    background: #fff;
+    color: #2575fc;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #6a11cb;
+    color: white;
+}
+
+.toggle-link {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.toggle-link:hover {
+    color: #2575fc;
+}
+
+/* Menambahkan media query untuk layar kecil */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
