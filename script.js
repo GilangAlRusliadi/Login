@@ -82,3 +82,34 @@ function animateOrbit() {
 }
 
 animateOrbit();
+
+// Hide or Show
+document.addEventListener("DOMContentLoaded", function () {
+    const heading = document.querySelector("h1"); // Pilih elemen h1
+    const controlContainer = document.querySelector(".control-container");
+    let isHidden = true;
+
+    // Sembunyikan elemen saat halaman dimuat
+    setTimeout(() => {
+        heading.style.display = "none";
+        controlContainer.style.display = "none";
+    }, 100);
+
+    function toggleVisibility() {
+        if (isHidden) {
+            heading.style.display = "block";
+            controlContainer.style.display = "block";
+        } else {
+            heading.style.display = "none";
+            controlContainer.style.display = "none";
+        }
+        isHidden = !isHidden;
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "Space") {
+            event.preventDefault(); // Mencegah scroll halaman saat tekan SPACE
+            toggleVisibility();
+        }
+    });
+});
